@@ -1,6 +1,5 @@
-/* 基本的なスタイル */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -10,66 +9,71 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 1em 0;
     text-align: center;
 }
 
 main {
-    padding: 1rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.category-item {
+section {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-grid,
+.spot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-item,
+.spot-item {
+    background-color: #e9e9e9;
+    padding: 15px;
+    border-radius: 8px;
     text-align: center;
-    padding: 1rem;
 }
 
 .category-item img {
-    width: 100%;
-    height: 150px; /* 高さを固定 */
-    object-fit: cover; /* 画像が要素に収まるように調整 */
-    border-radius: 5px;
-    display: block; /* ブロック要素にする */
+    max-width: 100%;
+    height: 150px; /* 画像の高さを固定 */
+    object-fit: cover; /* 画像がはみ出さないように調整 */
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
-.spot-section {
-    margin-top: 2rem;
-    padding-bottom: 5rem; /* フッターとの重なりを避ける */
+.category-item a {
+    text-decoration: none;
+    color: #333;
 }
 
-.spot-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.spot-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.category-item h3 {
+    margin: 10px 0 0;
 }
 
 .spot-item h3 {
     margin-top: 0;
-    color: #0056b3;
+}
+
+.spot-item p {
+    font-size: 0.9em;
+    line-height: 1.5;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem 0;
     background-color: #333;
     color: #fff;
-    position: fixed;
-    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
     bottom: 0;
+    width: 100%;
 }
