@@ -17,31 +17,31 @@
             <h2 id="categories-title">おすすめスポット</h2>
             <div class="category-grid">
                 <div class="category-item">
-                    <a href="#breakfast">
+                    <a href="#" data-target="#breakfast">
                         <img src="images/朝食.png" alt="朝食">
                         <h3 id="category-breakfast">朝食</h3>
                     </a>
                 </div>
                 <div class="category-item">
-                    <a href="#lunch">
+                    <a href="#" data-target="#lunch">
                         <img src="images/ランチ.png" alt="ランチ">
                         <h3 id="category-lunch">ランチ</h3>
                     </a>
                 </div>
                 <div class="category-item">
-                    <a href="#dinner">
+                    <a href="#" data-target="#dinner">
                         <img src="images/ディナー.png" alt="ディナー">
                         <h3 id="category-dinner">ディナー</h3>
                     </a>
                 </div>
                 <div class="category-item">
-                    <a href="#supermarkets">
+                    <a href="#" data-target="#supermarkets">
                         <img src="images/スーパーマーケット.png" alt="スーパー">
                         <h3 id="category-supermarkets">スーパー・コンビニ・ドラックストア</h3>
                     </a>
                 </div>
                 <div class="category-item">
-                    <a href="#beach">
+                    <a href="#" data-target="#beach">
                         <img src="images/ビーチ・リゾート.png" alt="ビーチ・観光">
                         <h3 id="category-beach">ビーチ・観光</h3>
                     </a>
@@ -259,10 +259,27 @@
         <p id="footer-text">&copy; 2025 おすすめスポットガイド</p>
     </footer>
     <script>
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
+        document.addEventListener('DOMContentLoaded', () => {
+            // ページ読み込み時にトップにスクロール
+            window.scrollTo(0, 0);
+
+            // スムーズスクロール
+            document.querySelectorAll('a[data-target]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
