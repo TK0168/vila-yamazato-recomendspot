@@ -44,6 +44,15 @@ section {
     padding: 15px;
     border-radius: 8px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-item:hover,
+.spot-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .category-item img {
@@ -65,11 +74,28 @@ section {
 
 .spot-item h3 {
     margin-top: 0;
+    color: #000;
 }
 
 .spot-item p {
     font-size: 0.9em;
     line-height: 1.5;
+    text-align: left;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: auto;
+    padding: 8px 16px;
+    background-color: #4a90e2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.map-button:hover {
+    background-color: #357abd;
 }
 
 footer {
